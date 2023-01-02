@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    body {
+    padding: 0;
+    margin: 0;
+  }
+
+  svg:not(:root) {
+    display: block;
+  }
+
+    .output * {
+    box-sizing: border-box;
+    }
+
+    .output ul {
+    padding-left: 0;
+    }
+
+    .output li {
+    display: block;
+    float: left;
+    width: 25%;
+    border: 2px solid white;
+    padding: 5px;
+    height: 40px;
+    background-color: #4a2db6;
+    color: white;
+    }
+
+    html {
+    font-family: sans-serif;
+    }
+
+    h2 {
+    font-size: 16px;
+    }
+
+    .a11y-label {
+    margin: 0;
+    text-align: right;
+    font-size: 0.7rem;
+    width: 98%;
+    }
+
+    body {
+    margin: 10px;
+    background: #f5f9fa;
+    }
+    </style>
+    <title>Active learning: a simple calendar</title>
+</head>
+<body><div class="output"></div>
+        <label for="month">Select a month:</label>
+        <select id="month">
+            <option value="">--Make a choice--</option>
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <option value="March">March</option>
+            <option value="April">April</option>
+            <option value="May">May</option>
+            <option value="June">June</option>
+            <option value="July">July</option>
+            <option value="August">August</option>v
+            <option value="September">September</option>
+            <option value="October">October</option>
+            <option value="November">November</option>"></option>
+            <option value="December">December</option>"></option>
+    </select>
+    <h1>Month</h1>
+    <ul></ul>
+    <script src="simplecalendar.js"></script>
+    </div>
+</body>
+</html>

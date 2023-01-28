@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // My attempt
+        //    function checkAge(age) {
+        //       age = (age >= 18) || "Did parents allow you?";
+        //       alert(age);
+        //    }
+
+
+        // Even shorter version 
+
+        function checkAge(age) {
+            return (age > 18) || confirm("Did parents allow you?");
+        }
+
+        // Prompt and show message
+
+        // let age = prompt('How old are you?', 18);
+        
+        // checkAge(age);
+
+// Function min(a,b)
+
+        function min(a,b) {
+            if (a > b) {
+                return b;
+            } else {
+                return a;
+            }
+        }
+
+        function minShort(c,d) {
+            return (c < d) ? c : d; // ternary operator ? takes two arguments, first truthy (c), second falsy(d)
+        }
+
+        // alert(min(4,2));
+
+        // alert(minShort(1,15));
+
+        function pow(x,n) {
+            let result = x;
+
+            for (let i = 1; i < n; i++) {
+                result *= x;
+            }
+
+            return result;
+        }
+
+        let x = prompt("x?", '');
+        let n = prompt ("n?", '');
+
+        if (n < 1) {
+            alert(`Power ${n} is not supported`)
+        } else {
+            alert( pow(x,n) );
+        }
+
+        
+
+
+
+
+    </script>
+</body>
+
+</html>

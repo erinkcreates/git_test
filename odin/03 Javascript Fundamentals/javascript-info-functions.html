@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //A function declaration looks like this:
+        // function name(parameters, delimited, by, comma) {
+            /* code */
+        // }
+
+        // Basic ex.
+        let userName = "friend";
+
+        function showMessage() {
+            let userName = " ";
+
+            let message = 'Hello there, ' + userName;
+            // Commented out just to make next steps quicker:
+            // alert(message);
+        };
+
+        showMessage();
+
+        function showText(from, text) {
+            // Commented out just to make next steps quicker:
+            // alert(from + ': ' + text);
+        }
+
+        // Commented out just to make next steps quicker:
+        // showText('Ann', 'Hello!');
+        // showText('Ann', "What's up?");
+
+// Default values 
+
+        function showMessageFrom(sender, messageBody = "Empty") {
+            sender = '*' + sender + '*';
+        }
+
+        let sender = "Ann";
+        // Commented out just to make next steps quicker:
+        // showMessageFrom(sender);
+        // alert(sender);
+
+// Alternative default parameters
+
+        function showNewMessage(text) {
+            // ...
+            // if (text === undefined) {
+            //     text = 'empty message';
+            // }
+            // ...or we could do:
+            text = text || 'empty message';
+        // Commented out just to make next steps quicker:
+        // alert(text);
+        }
+
+        // Commented out just to make next steps quicker:
+        // showNewMessage();
+
+// Returning a value
+        function checkAge(age) {
+            if (age >= 18) {
+                return true;
+            } else {
+            return confirm('Do you have permission from your parents?');
+            }
+        }
+
+        let age = prompt('How old are you?', 14);
+
+        if (checkAge(age)) { 
+            alert( 'Access granted' );
+        } else {
+            alert( 'Access denied' );
+        }
+
+// Functions == Comments; easier to read if you split it!
+
+    function showPrimes(n) {
+
+    for (let i = 2; i < n; i++) {
+    if (!isPrime(i)) continue;
+
+    alert(i);  // a prime
+    }
+    }
+
+    function isPrime(n) {
+    for (let i = 2; i < n; i++) {
+    if ( n % i == 0) return false;
+    }
+    return true;
+    }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        code {
+            background-color: #ededed;
+        }
+
+        h3 {
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Javascript Fundamentals Part 2: Strings</h1>
+    <p><a
+            href="https://www.theodinproject.com/lessons/foundations-fundamentals-part-2">https://www.theodinproject.com/lessons/foundations-fundamentals-part-2</a>
+    </p>
+    <h2>Resources</h2>
+    <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">Character
+                access</a></li>
+    </ul>
+    <h3>Escaping characters</h3>
+    <code>let text = "I\'ll get it."; <br />
+        console.log(text);</code>
+
+    <h3>Testing case insensitive: set both to all uppercase or all lowercase</h3>
+    <code>
+    function areEqualCaseInsensitive(str1, str2) { <br />
+        return str1.toUpperCase() === str2.toUpperCase(); <br />
+    } <br />
+    <br />
+    console.log(areEqualCaseInsensitive("hi", "Hi"));</code>
+    <h3>Test if a string starts or ends with a particular substring</h3>
+    <code>
+        const beverageType = "whiskey sour";<br />
+        <br />
+        if (beverageType.endsWith('sour')) {<br />
+            console.log("It's a sour.");<br />
+        } else {<br />
+            console.log("It's not a sour.")<br />
+        } <br />
+    </code>
+    <p>"Whiskey sour" will return "It's a sour."<br />
+        "Lemonade" will return "It's not a sour."</p>
+    <h3>Find the position of a substring</h3>
+    <code>
+        const duckBoys = "Huey, Dewey, and Louie"; <br />
+        <br />
+        console.log("'Dewey' starts at index " + duckBoys.indexOf("Dewey"));<br />
+        <br />
+        console.log("'Donald' is not in the string, so 'Donald' returns " + duckBoys.indexOf("Donald"));<br />
+        <br />
+    </code>
+    </code>
+
+    <ul class="output">
+        <li></li>
+    </ul>
+    <script>
+        // Escape characters in a string
+        let text = 'I\'d like to use single quotes in a single-quote-wrapped string.';
+        console.log(text);
+
+        // Testing case insensitive: set both to all uppercase, or to all lowercase
+
+        function areEqualCaseInsensitive(str1, str2) {
+            return str1.toUpperCase() === str2.toUpperCase();
+        }
+
+        console.log(areEqualCaseInsensitive("hi", "Hi"));
+
+
+        // Test if a string starts or ends with a particular substring
+
+        const beverageType = "whiskey sour";
+
+        if (beverageType.endsWith('sour')) {
+            console.log("It's a sour.");
+        } else {
+            console.log("It's not a sour.")
+        }
+
+        // Find the position of a substring
+
+        const duckBoys = "Huey, Dewey, and Louie";
+
+        console.log("'Dewey' starts at index " + duckBoys.indexOf("Dewey"));
+
+        console.log("'Donald' is not in the string, so 'Donald' returns " + duckBoys.indexOf("Donald"));
+
+        // Extracting a substring from a string
+
+        let lastName = "Chambers";
+        let firstName = "Erin";
+
+        console.log(lastName.slice(0, 5)); // First 5 letters (5 indicates "cut before 6th character")
+        console.log("Omitted: " + lastName.slice(5)); // Letters starting with 6th
+
+        function createUserName(first, last) {
+            let firstPart = first.charAt(0);
+            let lastPart = last.slice(0, 5);
+            return firstPart + lastPart;
+        }
+
+        console.log(createUserName("Erin", "Chambers"));
+
+        // Replace
+
+        let browserType = "Mozilla";
+        browserType = browserType.replace("Moz", "Van"); // replace() is case sensitive
+
+        console.log(browserType);
+
+
+        // Exercise 3: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Useful_string_methods#making_new_strings_from_old_parts
+
+        const list = document.querySelector('.output ul');
+        list.innerHTML = '';
+        const stations = ['MAN675847583748sjt567654;Manchester Piccadilly',
+            'GNF576746573fhdg4737dh4;Greenfield',
+            'LIV5hg65hd737456236dch46dg4;Liverpool Lime Street',
+            'SYB4f65hf75f736463;Stalybridge',
+            'HUD5767ghtyfyr4536dh45dg45dg3;Huddersfield'];
+
+        for (const station of stations) {
+            // write your code just below here
+
+            let shortCode = station.slice(0, 3); // Get first three chars
+            console.log("Shortcode: " + shortCode);
+
+            let semiColon = station.indexOf(";"); // Find index of semicolon
+
+            console.log("Index of semicolon: " + semiColon);
+
+            let stationName = station.slice(semiColon + 1);
+
+            let humanReadableName = shortCode + ": " + stationName;
+
+            const result = humanReadableName;
+            const listItem = document.createElement('li');
+            listItem.textContent = result;
+            list.appendChild(listItem);
+        }
+
+
+
+        // Exercise 1 (doesn't actually do anything on the page, for some reason)
+
+        // const list = document.querySelector('.output ul');
+        // list.innerHTML = '';
+        // const greetings = ['Happy Birthday!',
+        //     'Merry Christmas my love',
+        //     'A happy Christmas to all the family',
+        //     'You\'re all I want for Christmas',
+        //     'Get well soon'];
+
+        // for (const greeting of greetings) {
+        // Your conditional test needs to go inside the parentheses
+        // in the line below, replacing what's currently there
+        //     if (greeting.indexOf("Christmas") === -1) {
+        //         const listItem = document.createElement('li');
+        //         listItem.textContent = greeting;
+        //         list.appendChild(listItem);
+        //     }
+        // }
+
+        // Exercise 2: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Useful_string_methods#fixing_capitalization
+        // (doesn't actually do anything on the page, for some reason)
+
+        const list = document.querySelector('.output ul');
+        list.innerHTML = '';
+        const cities = ['lonDon', 'ManCHESTer', 'BiRmiNGHAM', 'liVERpoOL'];
+
+        for (const city of cities) {
+            // write your code just below here
+
+            // 1. Convert the whole of the string contained in the city variable to lowercase and store it in a new variable.
+
+            let lowerCase = city.toLowerCase();
+
+            // 2. Grab the first letter of the string in this new variable and store it in another variable.
+
+            let firstLetter = lowerCase[0];
+
+            let capitalizedCity = lowerCase.replace(firstLetter, firstLetter.toUpperCase());
+
+            // 3. Using this latest variable as a substring, replace the first letter of the lowercase string with the first letter of the lowercase string changed to upper case. Store the result of this replacement procedure in another new variable.
+
+            // 5. Change the value of the result variable to equal to the final result, not the city.
+
+            const result = capitalizedCity;
+            const listItem = document.createElement('li');
+            listItem.textContent = result;
+            list.appendChild(listItem);
+        }
+
+
+    </script>
+</body>
+
+</html>

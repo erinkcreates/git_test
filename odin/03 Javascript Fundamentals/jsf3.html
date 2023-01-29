@@ -15,9 +15,49 @@
             </a>
         </li>
     </ol>
-    <!-- -->
-    <script src="w3c-functions.js"></script>
+    <!-- <script src="w3c-functions.js"></script> -->
+    <!-- Activities https://www.theodinproject.com/lessons/foundations-fundamentals-part-3 -->
+    <script>
 
+        function add7(x) {
+            let result = x;
+
+            for (let i = 1; i < x; i++) {
+                result = x + 7;
+            }
+
+            return result;
+        }
+
+        console.log("Result of add7: " + add7(3));
+
+        function multiply(a, b) {
+            return a * b;
+        }
+
+        console.log("Result of multiply: " + multiply(3, 6));
+
+
+        function lastLetter(string) {
+            let lastChar = string.charAt(string.length - 1);
+            return lastChar;
+        }
+
+        console.log("Last letter in string: " + lastLetter("God this is hard"));
+
+        // Do the same with square brackets:
+
+        function lastLetterAlt(altString) {
+            let l = altString.length - 1;
+            return altString[l];
+        }
+
+        console.log("last letter in alternate string: " + lastLetterAlt("Yikes"));
+
+
+
+
+    </script>
 </body>
 
 </html>

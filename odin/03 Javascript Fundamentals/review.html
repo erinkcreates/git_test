@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Write each function and test the output with console.log.</p>
+
+<ol>
+    <li>Write a function called add7 that takes one number and returns that number + 7.</li>
+    <li>Write a function called multiply that takes 2 numbers and returns their product.</li>
+    <li>Write a function called capitalize that takes a string and returns that string with only the first letter capitalized. Make sure that it can take strings that are lowercase, UPPERCASE or BoTh.</li>
+    <li>Write a function called lastLetter that takes a string and returns the very last letter of that string:</li>
+    <li>lastLetter("abcd") should return "d"</li>
+</ol>
+
+    <script>
+
+        // Write a function called add7 that takes one number and returns that number + 7.
+
+        function add7(num) {
+            return num + 7;
+        }
+        
+        console.log(add7(3));
+
+        // Write a function called multiply that takes 2 numbers and returns their product.
+
+        function multiply(a,b) {
+            return a * b;
+        }
+
+        console.log(multiply(3,7));
+
+        // Write a function called capitalize that takes a string and returns that string with only the first letter capitalized. Make sure that it can take strings that are lowercase, UPPERCASE or BoTh.
+
+        function capitalize(myString) {
+            // Make string all lower case
+            let lowerCase = myString.toLowerCase();
+            // Get first character
+
+            let firstLetter = myString[0];
+
+            let firstLetterCaps = firstLetter.toUpperCase();
+
+            let result = myString.replace(firstLetter, firstLetterCaps)
+
+            return result;
+        }
+
+        console.log(capitalize("Hello there"));
+
+        // Write a function called lastLetter that takes a string and returns the very last letter of that string:
+
+        function lastLetter(myOtherString) {
+            let lastChar = myOtherString.charAt(myOtherString.length - 1);
+            return lastChar;
+        }
+
+        console.log(lastLetter("abcd"));
+
+
+    </script>
+</body>
+</html>
